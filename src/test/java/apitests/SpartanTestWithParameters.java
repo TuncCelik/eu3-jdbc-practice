@@ -19,7 +19,7 @@ public class SpartanTestWithParameters {
     public void beforeclass(){
         baseURI="http://3.80.189.73:8000";
     }
-    /*
+    /**
           Given accept type is Json
           And Id parameter value is 5
           When user sends GET request to /api/spartans/{id}
