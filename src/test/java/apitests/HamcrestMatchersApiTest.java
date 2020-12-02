@@ -23,8 +23,8 @@ public class HamcrestMatchersApiTest {
     @Test
     public void OneSpartanWithHamcrest(){
         given().accept(ContentType.JSON)
-                .and().pathParam("id",15).
-                when().get("http://54.173.212.45:8000/api/spartans/{id}")
+                .and().pathParam("id",15)
+                .when().get("http://54.173.212.45:8000/api/spartans/{id}")
                 .then().statusCode(200)
                 .and().assertThat().contentType(equalTo("application/json;charset=UTF-8"))
                 .and().assertThat().body("id",equalTo(15),
@@ -54,9 +54,9 @@ public class HamcrestMatchersApiTest {
         given().accept(ContentType.JSON)
                 .and().pathParam("name","Computer")
                 .when().log().all().get("http://api.cybertektraining.com/teacher/department/{name}")
-                .then().statusCode(200).and()
-                .contentType(equalTo("application/json;charset=UTF-8")).and()
-                .body("teachers.firstName",hasItems("Alexander","Marteen"));
+                .then().statusCode(200)
+                .and().contentType(equalTo("application/json;charset=UTF-8"))
+                .and().body("teachers.firstName",hasItems("Alexander","Marteen"));
 
     }
 }
