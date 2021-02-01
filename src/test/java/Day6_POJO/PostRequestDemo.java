@@ -147,7 +147,11 @@ public class PostRequestDemo {
                         "data.phone",equalTo(8877445596l));
 
         //after post request, send a get request to generated spartan
-
+        Response response = given().accept(ContentType.JSON)
+                .pathParam("id", 111)
+                .and().when().get("/api/spartans/{id}");
+        Spartan spartanResponse = response.body().as(Spartan.class);
+        System.out.println(spartanResponse.toString());
 
     }
 

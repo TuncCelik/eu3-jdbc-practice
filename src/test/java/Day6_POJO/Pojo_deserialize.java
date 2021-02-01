@@ -69,18 +69,20 @@ public class Pojo_deserialize {
                 "}";
 
         Map<String,Object> map = gson.fromJson(myJsonData, Map.class);
-        System.out.println(map);
+        System.out.println("map = " + map);
+        System.out.println(map.toString());
 
         Spartan spartan15 = gson.fromJson(myJsonData,Spartan.class);
-        System.out.println(spartan15);
+        System.out.println("spartan15 = " + spartan15);
+        System.out.println(spartan15.toString());
 
         //-----------SERIALIZATION---------------
         //JAVA Collection or POJO to JSON
         Spartan spartanEU = new Spartan(200,"Mike","Male",123123123);
 
         String jsonSpartanEU = gson.toJson(spartanEU);
-        System.out.println(jsonSpartanEU);
-
+        System.out.println("jsonSpartanEU = " + jsonSpartanEU);
+        System.out.println(jsonSpartanEU.toString());
     }
 
 

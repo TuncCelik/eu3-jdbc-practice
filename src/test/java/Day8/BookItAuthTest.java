@@ -18,6 +18,7 @@ public class BookItAuthTest {
     public void getAllCampusese(){
         Response response = given().header("Authorization", accessToken).
                 when().get("/api/campuses");
+        assertEquals(response.statusCode(),200);
         response.prettyPrint();
         System.out.println(response.statusCode());
 

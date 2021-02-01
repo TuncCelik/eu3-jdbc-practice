@@ -16,12 +16,11 @@ public class JsonSchemaValidationDemo {
     }
     @Test
     public void JsonSchemaValidationForSpartan(){
-
         given()
                 .accept(ContentType.JSON)
                 .and()
-                .pathParam("id",10)
-                .when()
+                .pathParam("id",10).
+                when()
                 .get("/api/spartans/{id}")
                 .then()
                 .statusCode(200)
